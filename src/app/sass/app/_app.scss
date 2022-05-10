@@ -1,0 +1,25 @@
+@import "./Layout/layout";
+@import "./Auth/index";
+
+.App {
+    min-height: 100vh;
+    height: 100vh;
+}
+
+#tsparticles {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.text__box {
+    background-color: rgba(0, 0, 0, 0.567);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}

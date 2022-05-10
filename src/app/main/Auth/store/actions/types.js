@@ -1,0 +1,9 @@
+export const LOGIN_INIT = "LOGIN_INIT";
+export const LOGIN_SUCCEED = "LOGIN_SUCCEED";
+export const LOGIN_FAILED = "LOGIN_FAILED";
+
+export const REGISTER_INIT = "REGISTER_INIT";
+export const REGISTER_SUCCEED = "REGISTER_SUCCEED";
+export const REGISTER_FAILED = "REGISTER_FAILED";
+
+export const CHANGE_AVATAR = "CHANGE_AVATAR";

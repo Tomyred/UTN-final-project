@@ -1,0 +1,14 @@
+@mixin neonButton($color, $fontColor) {
+    padding: 15px 25px;
+    border: none;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: $color;
+    color: $fontColor;
+    &:hover{
+     
+        -webkit-box-shadow: 5px 5px 50px -3px $color; 
+        box-shadow: 5px 5px 50px -3px $color;
+        
+    }
+}

@@ -1,0 +1,20 @@
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./app/app";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.main {
+  height: 100%;
+}
+
+body {
+  
+  font-family: $poppins;
+}
+
