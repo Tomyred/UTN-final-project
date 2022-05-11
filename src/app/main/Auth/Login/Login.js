@@ -10,7 +10,8 @@ const Login = ({ store, dispatch }) => {
         setUser({ ...user, [e.target.name]: e.target.value });
     };
     const loginErrorMessage = store.auth.logIn.loginErrorMessage;
-    const handleClick = () => {
+    const handleSubmit = e => {
+        e.preventDefault();
         if (visitorMode === false) {
             dispatch(logIn(user));
         } else {
@@ -22,7 +23,7 @@ const Login = ({ store, dispatch }) => {
         <div className="login__component">
             <div className="login__container">
                 <h2>Iniciar sesión</h2>
-                <div className="login">
+                <form onSubmit={handleSubmit} className="login">
                     <input
                         onChange={setUserInfo}
                         name="userName"
@@ -38,7 +39,7 @@ const Login = ({ store, dispatch }) => {
                         />
                     )}
 
-                    <button onClick={handleClick}>
+                    <button type="submit">
                         {" "}
                         {visitorMode ? "Entrar" : "Iniciar sesión"}{" "}
                     </button>
@@ -46,7 +47,7 @@ const Login = ({ store, dispatch }) => {
                         {" "}
                         {loginErrorMessage ?? loginErrorMessage}{" "}
                     </span>
-                </div>
+                </form>
                 <div>
                     <p>
                         ¿No tienes una cuenta?{" "}

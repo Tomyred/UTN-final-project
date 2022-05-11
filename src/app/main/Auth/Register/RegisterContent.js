@@ -13,7 +13,7 @@ const RegisterContent = ({
     if (saving) {
         return (
             <div>
-                <h2>Creando usuario...</h2>
+                <h2>Comprobando...</h2>
             </div>
         );
     }
