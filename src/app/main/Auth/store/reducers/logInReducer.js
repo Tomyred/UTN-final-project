@@ -8,7 +8,6 @@ const initialState = {
 export default function logInReducer(state = initialState, action) {
     switch (action.type) {
         case "LOGIN_INIT":
-            console.log("login");
             return {
                 ...state,
                 logginIn: true,

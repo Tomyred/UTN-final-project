@@ -6,7 +6,6 @@ import Register from "./Register/Register";
 
 const Auth = ({ store, dispatch }) => {
     const loggingIn = store.auth.logIn.logginIn;
-    console.log(loggingIn);
     if (loggingIn) {
         return <LoadingScreen />;
     }

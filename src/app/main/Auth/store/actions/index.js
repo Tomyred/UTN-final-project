@@ -71,24 +71,33 @@ export const register = (user, repeatedPassword) => dispatch => {
     const finded = usersDB.find(dbUser => dbUser.userName === user.userName);
 
     if (finded) {
-        dispatch({
-            type: types.REGISTER_FAILED,
-            registerErrorMessage: "El usuario ya existe",
-        });
+        setTimeout(() => {
+            dispatch({
+                type: types.REGISTER_FAILED,
+                payload: "El usuario ya existe",
+            });
+        }, 1500);
     } else {
         if (user.password === repeatedPassword) {
-            dispatch({
-                type: types.REGISTER_SUCCEED,
-                registerErrorMessage: "El usuario ya existe",
-            });
-            usersDB.push(user);
+            setTimeout(() => {
+                dispatch({
+                    type: types.REGISTER_SUCCEED,
+                });
+                usersDB.push(user);
+            }, 1500);
         } else {
             dispatch({
                 type: types.REGISTER_FAILED,
-                registerErrorMessage: "Las contraseñas no coinciden",
+                payload: "Las contraseñas no coinciden",
             });
         }
     }
+};
+
+export const resetRegister = () => dispatch => {
+    dispatch({
+        type: "RESET_REGISTER",
+    });
 };
 
 export const setAvatar = url => dispatch => {
