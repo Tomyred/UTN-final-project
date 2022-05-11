@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { logIn, logInVisitor } from "../store/actions";
 
-const Login = ({ dispatch }) => {
+const Login = ({ store, dispatch }) => {
     const [visitorMode, setVisitorMode] = useState(false);
     const [user, setUser] = useState({ userName: "", password: "" });
 
     const setUserInfo = e => {
         setUser({ ...user, [e.target.name]: e.target.value });
     };
-
+    const loginErrorMessage = store.auth.logIn.loginErrorMessage;
     const handleClick = () => {
         if (visitorMode === false) {
             dispatch(logIn(user));
@@ -42,6 +42,10 @@ const Login = ({ dispatch }) => {
                         {" "}
                         {visitorMode ? "Entrar" : "Iniciar sesión"}{" "}
                     </button>
+                    <span style={{ color: "red", fontSize: 15 }}>
+                        {" "}
+                        {loginErrorMessage ?? loginErrorMessage}{" "}
+                    </span>
                 </div>
                 <div>
                     <p>

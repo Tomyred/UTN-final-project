@@ -32,7 +32,7 @@ export const logIn = user => dispatch => {
                         profilePic: profilePicUrl,
                     },
                 });
-            }, 1000);
+            }, 2000);
         } else {
             dispatch({
                 type: types.LOGIN_FAILED,
@@ -48,6 +48,9 @@ export const logIn = user => dispatch => {
 };
 
 export const logInVisitor = user => dispatch => {
+    dispatch({
+        type: types.LOGIN_INIT,
+    });
     const profilePicUrl = `https://robohash.org/${user.userName.toLowerCase()}`;
     setTimeout(() => {
         dispatch({
@@ -92,5 +95,11 @@ export const setAvatar = url => dispatch => {
     dispatch({
         type: types.CHANGE_AVATAR,
         payload: url,
+    });
+};
+
+export const logOut = () => dispatch => {
+    dispatch({
+        type: types.LOGOUT,
     });
 };

@@ -7,3 +7,5 @@ export const REGISTER_SUCCEED = "REGISTER_SUCCEED";
 export const REGISTER_FAILED = "REGISTER_FAILED";
 
 export const CHANGE_AVATAR = "CHANGE_AVATAR";
+
+export const LOGOUT = "LOGOUT";

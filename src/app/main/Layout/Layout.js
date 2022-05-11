@@ -1,13 +1,14 @@
 import React, { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import routesConfig from "../../config/routesConfig";
+import LoadingScreen from "../../pages/LoadingScreen/LoadingScreen";
 import Home from "./Home/Home";
 import Navbar from "./Navbar/Navbar";
 
 const Layout = ({ store, dispatch }) => {
     return (
         <div className="layout">
-            <Navbar store={store} />
+            <Navbar store={store} dispatch={dispatch} />
             <div className="fill"></div>
             <main>
                 <Routes>
@@ -18,7 +19,7 @@ const Layout = ({ store, dispatch }) => {
                                 path={route.path}
                                 exact={route.exact}
                                 element={
-                                    <Suspense fallback={<h3>Cargando...</h3>}>
+                                    <Suspense fallback={<LoadingScreen />}>
                                         <route.component
                                             store={store}
                                             dispatch={dispatch}
