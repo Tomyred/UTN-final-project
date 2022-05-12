@@ -34,11 +34,7 @@
             
         }
         button {
-            background: transparent;
-            padding: 10px;
-            // border: none;
-            margin: 20px;
-            border-radius: 8px;
+            @include neonButton(#7ff000,#000)
         }
         button:active {
     
@@ -48,10 +44,10 @@
     
 }
 
-.avatar__container > form > 
-
 .avatar__container  > img {
-  width: 200px;
+  width: 250px;
+  border-radius: 10%;
+  outline: 5px solid grey;
 }
 
 
@@ -64,11 +60,16 @@
     margin-top: 10px;
 }
 
-.radio__container > input {
-    height: 25px;
-  width: 25px;
+.radio__option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+        height: 25px;
+      width: 25px;
+    }
 }
 
-.green__neon__button{
+.set__profile__pic{
     @include neonButton(red,#fff)
 }

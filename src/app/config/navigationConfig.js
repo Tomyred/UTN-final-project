@@ -1,5 +1,10 @@
 export const navigationConfig = [
     {
+        id: "home",
+        label: "Inicio",
+        to: "home",
+    },
+    {
         id: "avatar_generator",
         label: "Generador de avatar",
         to: "avatar-gen",

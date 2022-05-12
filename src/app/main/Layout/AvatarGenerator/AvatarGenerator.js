@@ -33,7 +33,7 @@ const AvatarGenerator = ({ store, dispatch }) => {
             <img src={avatarUrl} alt={text} />
             <button
                 onClick={() => dispatch(setAvatar(avatarUrl))}
-                className="green__neon__button"
+                className="set__profile__pic"
             >
                 Colocar de perfil
             </button>
@@ -45,31 +45,43 @@ const AvatarGenerator = ({ store, dispatch }) => {
                 </p>
             </div>
             <div className="radio__container">
-                <input
-                    type="radio"
-                    value="1"
-                    defaultChecked
-                    name="name"
-                    onClick={e => setAvatarType(e.target.value)}
-                />
-                <input
-                    name="name"
-                    onClick={e => setAvatarType(e.target.value)}
-                    value="2"
-                    type="radio"
-                />
-                <input
-                    name="name"
-                    onClick={e => setAvatarType(e.target.value)}
-                    value="3"
-                    type="radio"
-                />
-                <input
-                    name="name"
-                    onClick={e => setAvatarType(e.target.value)}
-                    value="4"
-                    type="radio"
-                />
+                <div className="radio__option">
+                    <span>Robots</span>
+                    <input
+                        type="radio"
+                        value="1"
+                        defaultChecked
+                        name="name"
+                        onClick={e => setAvatarType(e.target.value)}
+                    />
+                </div>
+                <div className="radio__option">
+                    <span>Monstruos</span>
+                    <input
+                        name="name"
+                        onClick={e => setAvatarType(e.target.value)}
+                        value="2"
+                        type="radio"
+                    />
+                </div>
+                <div className="radio__option">
+                    <span>Mas robots</span>
+                    <input
+                        name="name"
+                        onClick={e => setAvatarType(e.target.value)}
+                        value="3"
+                        type="radio"
+                    />
+                </div>
+                <div className="radio__option">
+                    <span>Bestias maullantes</span>
+                    <input
+                        name="name"
+                        onClick={e => setAvatarType(e.target.value)}
+                        value="4"
+                        type="radio"
+                    />
+                </div>
             </div>
         </div>
     );

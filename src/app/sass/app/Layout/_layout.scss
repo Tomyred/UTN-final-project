@@ -1,6 +1,9 @@
 @import "./Navbar/navbar";
 @import "./AvatarGenerator/avatarGenerator";
+@import "./Home/home";
+@import "./MealDB/mealDB";
 
 .layout{
+    min-height: 100%;
     height: 100%;
 }

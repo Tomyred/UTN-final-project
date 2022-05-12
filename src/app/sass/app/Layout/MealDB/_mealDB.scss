@@ -1,0 +1,15 @@
+@import "./categoryCard";
+
+.mealDB__component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.categories__card__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
