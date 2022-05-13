@@ -6,16 +6,21 @@ const mealDBRoutes = [
         exact: true,
         component: lazy(() => import("./MealDB")),
     },
-    // {
-    //     path: "mealdb/:category",
-    //     exact: true,
-    //     component: lazy(() => import("./recipes/recipes")),
-    // },
-    // {
-    //     path: "mealdb/:category/:id",
-    //     exact: true,
-    //     component: lazy(() => import("./recipeDetail/recipeDetail")),
-    // },
+    {
+        path: "mealdb/favorites",
+        exact: true,
+        component: lazy(() => import("./Favorites/Favorites")),
+    },
+    {
+        path: "mealdb/:category",
+        exact: true,
+        component: lazy(() => import("./RecipeList/RecipeList")),
+    },
+    {
+        path: "mealdb/:category/:id",
+        exact: true,
+        component: lazy(() => import("./RecipeDetail/RecipeDetail")),
+    },
 ];
 
 export default mealDBRoutes;

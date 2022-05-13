@@ -1,74 +1,35 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CategoryCard from "./CategoryCard/CategoryCard";
+import { getCategories } from "./store/actions";
 
-const MealDB = () => {
-    const [categories, setCategories] = useState([]);
-    const [loadState, setLoadState] = useState({
-        loading: false,
-        loaded: false,
-        loadingError: false,
-    });
+const MealDB = ({ store, dispatch }) => {
+    const { loaded, categories } = store.mealDB.categories;
 
-    const loadCategories = async () => {
-        try {
-            setLoadState(prevState => {
-                return {
-                    ...prevState,
-                    loading: true,
-                    loaded: false,
-                    loadingError: false,
-                };
-            });
-            const res = await axios.get(
-                `https://www.themealdb.com/api/json/v1/1/categories.php`
-            );
-            if (res.status === 200) {
-                setCategories(res.data.categories);
-                setLoadState(prevState => {
-                    return {
-                        ...prevState,
-                        loading: false,
-                        loaded: true,
-                    };
-                });
-            } else {
-                setLoadState(prevState => {
-                    return {
-                        ...prevState,
-                        loading: false,
-                        loadingError: true,
-                    };
-                });
-            }
-        } catch (error) {
-            console.log(error);
-            setLoadState(prevState => {
-                return {
-                    ...prevState,
-                    loading: false,
-                    loadingError: true,
-                };
-            });
-        }
-    };
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (loadState.loaded === false) {
-            loadCategories();
+        if (loaded === false) {
+            dispatch(getCategories());
         }
-    }, [setLoadState, loadState.loaded]);
+    }, [loaded, dispatch]);
 
     return (
         <div className="mealDB__component">
-            <h2>Categoria de recetas (solo en ingles)</h2>
-            {/* <hr /> */}
+            <h2 className="header">Categories</h2>
+            <button
+                className="fav__button"
+                onClick={() => navigate("favorites")}
+            >
+                Favorites
+            </button>
             <div className="categories__card__container">
                 {categories.map(category => {
                     return (
                         <CategoryCard
                             key={category.idCategory}
                             category={category}
+                            navigate={navigate}
                         />
                     );
                 })}

@@ -5,6 +5,7 @@
     border-radius: 8px;
     background-color: $color;
     color: $fontColor;
+    cursor: pointer;
     &:hover{
      
         -webkit-box-shadow: 5px 5px 50px -3px $color; 
