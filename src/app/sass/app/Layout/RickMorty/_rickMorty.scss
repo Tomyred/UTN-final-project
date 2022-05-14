@@ -1,0 +1,38 @@
+@import "./characterCard";
+@import "../../../abstracts/mixins.scss";
+
+.rickMorty__component{
+    height: 100%;
+    text-align: center;
+    background: rgb(18, 18, 18);
+    
+}
+
+.characters__actions_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    input{
+        padding: 15px;
+        width: 60%;
+        background-color: transparent;
+        font-size: 25px;
+        @media screen and (min-width: 1100px){
+            width: 50%;
+        }
+    }
+    .button__prev{
+        @include neonButton(#d9534f,#fff)
+    }
+    .button__next{
+        @include neonButton(#5cb85c,#fff)
+    }
+}
+
+.card__container {
+    background: rgb(18, 18, 18);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
