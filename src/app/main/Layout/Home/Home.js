@@ -12,11 +12,13 @@ const Home = () => {
                 <div className="project__info">
                     <h3>Este proyecto consta de:</h3>
                     <ul>
-                        <li> 10 componentes </li>
-                        <li> 5 llamadas a API´s </li>
+                        <li> 12 componentes </li>
+                        <li> 7 llamadas a API´s </li>
                         <li> 4 formularios </li>
                         <li> Redux </li>
                         <li> Hooks </li>
+                        <li> Sass </li>
+                        <li> 13 commits </li>
                     </ul>
                 </div>
             </div>

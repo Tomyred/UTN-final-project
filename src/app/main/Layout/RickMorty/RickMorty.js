@@ -45,6 +45,7 @@ const RickMorty = ({ dispatch, store }) => {
                 </button>
                 <input
                     type="text"
+                    placeholder="Search..."
                     onChange={e => setSearchText(e.target.value)}
                 />
                 <button
