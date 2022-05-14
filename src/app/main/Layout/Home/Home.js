@@ -13,7 +13,7 @@ const Home = () => {
                     <h3>Este proyecto consta de:</h3>
                     <ul>
                         <li> 10 componentes </li>
-                        <li> 4 llamadas a API´s </li>
+                        <li> 5 llamadas a API´s </li>
                         <li> 4 formularios </li>
                         <li> Redux </li>
                         <li> Hooks </li>

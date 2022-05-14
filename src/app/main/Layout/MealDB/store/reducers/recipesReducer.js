@@ -5,6 +5,9 @@ const initialState = {
     loading: false,
     loaded: false,
     loadingError: false,
+    recipeLoading: false,
+    recipeLoaded: false,
+    recipeError: false,
 };
 
 export default function recipesReducer(state = initialState, action) {
@@ -34,24 +37,37 @@ export default function recipesReducer(state = initialState, action) {
         case "RECIPE_LOAD_INIT":
             return {
                 ...state,
-                loading: true,
-                loaded: false,
-                loadingError: false,
+                recipeLoading: true,
+                recipeLoaded: false,
+                recipeError: false,
             };
         case "RECIPE_LOAD_SUCCEED":
             return {
                 ...state,
                 recipeDetail: action.payload,
-                loading: false,
-                loaded: true,
-                loadingError: false,
+                recipeLoading: false,
+                recipeLoaded: true,
+                recipeError: false,
             };
         case "RECIPE_LOAD_FAILED":
             return {
                 ...state,
-                loading: false,
-                loaded: false,
-                loadingError: true,
+                recipeLoading: false,
+                recipeLoaded: false,
+                recipeError: true,
+            };
+        case "ADD_TO_FAV":
+            return {
+                ...state,
+                favRecipes: state.favRecipes.concat(action.payload),
+            };
+        case "REMOVE_FROM_FAV":
+            const id = action.payload;
+            return {
+                ...state,
+                favRecipes: state.favRecipes.filter(
+                    recipe => recipe.idMeal !== id
+                ),
             };
         default:
             return state;

@@ -70,7 +70,7 @@ const Login = ({ store, dispatch }) => {
                             onChange={() => setVisitorMode(!visitorMode)}
                             type="checkbox"
                         />
-                        <span> Entrar como visitante </span>
+                        <span> Entrar como invitado </span>
                     </div>
                 </div>
             </div>

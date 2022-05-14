@@ -85,3 +85,17 @@ export const getRecipeById = id => async dispatch => {
         });
     }
 };
+
+export const addRecipeToFav = recipe => dispatch => {
+    dispatch({
+        type: types.ADD_TO_FAV,
+        payload: recipe,
+    });
+};
+
+export const removeRecipeFromFav = id => dispatch => {
+    dispatch({
+        type: types.REMOVE_FROM_FAV,
+        payload: id,
+    });
+};

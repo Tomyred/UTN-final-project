@@ -17,6 +17,11 @@ const mealDBRoutes = [
         component: lazy(() => import("./RecipeList/RecipeList")),
     },
     {
+        path: "mealdb/favorites/:id",
+        exact: true,
+        component: lazy(() => import("./RecipeDetail/RecipeDetail")),
+    },
+    {
         path: "mealdb/:category/:id",
         exact: true,
         component: lazy(() => import("./RecipeDetail/RecipeDetail")),

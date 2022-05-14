@@ -60,6 +60,20 @@
    }
 }
 
+.remove__button{
+    padding: 8px 12px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 3px solid #ba4743;
+    &:hover{
+     background-color: #d9534f;
+     -webkit-box-shadow: 5px 5px 50px -3px #d9534f; 
+      box-shadow: 5px 5px 50px -3px #d9534f;
+     
+    }
+}
+
 .fav__button{
     padding: 8px 12px;
     background-color: transparent;

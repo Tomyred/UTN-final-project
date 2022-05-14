@@ -20,3 +20,23 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.back__arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    
+    cursor: pointer;
+    // bottom: 0;
+    &:hover{
+        .text__back{
+            text-decoration: underline;
+        }
+        
+    }
+    @media screen and (min-width: 600px) {
+        position: absolute;
+        left: 0;
+        padding: 30px;
+    }
+}
