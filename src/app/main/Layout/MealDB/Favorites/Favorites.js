@@ -9,6 +9,15 @@ const Favorites = ({ store, dispatch }) => {
     if (favRecipes.length === 0) {
         return (
             <div className="mealDB__component">
+                <div className="back__arrow" onClick={() => navigate(-1)}>
+                    <span
+                        style={{ marginRight: "10px" }}
+                        className="material-icons md-36 action__button"
+                    >
+                        arrow_back
+                    </span>
+                    <span className="text__back"> Back </span>
+                </div>
                 <h2>You don't have favorite recipes yet</h2>
             </div>
         );
