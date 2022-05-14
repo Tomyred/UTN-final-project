@@ -11,7 +11,9 @@ const RickMortyCard = ({
                     <h2>{name}</h2>
                     <span>
                         <span
-                            style={{ color: status !== "Alive" ? "red" : "" }}
+                            style={{
+                                color: status === "Alive" ? "#7ff000" : "red",
+                            }}
                         >
                             {status}{" "}
                         </span>

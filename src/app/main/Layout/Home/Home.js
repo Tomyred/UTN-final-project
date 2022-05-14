@@ -18,7 +18,7 @@ const Home = () => {
                         <li> Redux </li>
                         <li> Hooks </li>
                         <li> Sass </li>
-                        <li> 13 commits </li>
+                        <li> 15 commits </li>
                     </ul>
                 </div>
             </div>
